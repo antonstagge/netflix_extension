@@ -1,0 +1,25 @@
+{
+    "name": "Netflix Bitrate Menu Extension",
+    "version": "1.0",
+    "description": "Brings back old bitrate choice menu ctrl+shift+alt+d",
+    "manifest_version": 2,
+    "author": "antonstagge",
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "web_accessible_resources": [
+        "cadmium-playercore-6.0012.597.011-with_menu.js"
+    ],
+
+    "permissions": [
+        "storage",
+        "webRequest",
+        "webRequestBlocking",
+        "*://assets.nflxext.com/*/ffe/player/html/*",
+        "*://www.assets.nflxext.com/*/ffe/player/html/*",
+        "*://netflix.com/*",
+        "*://www.netflix.com/*"
+    ]
+}
