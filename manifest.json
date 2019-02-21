@@ -24,6 +24,9 @@
     ],
 
     "icons": {
-        "128": "logoblack.png"
+        "128": "NetExt.png"
+    },
+    "browser_action": {
+        "default_icon": "NetExt.png"
     }
 }
