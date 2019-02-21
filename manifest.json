@@ -21,5 +21,9 @@
         "*://www.assets.nflxext.com/*/ffe/player/html/*",
         "*://netflix.com/*",
         "*://www.netflix.com/*"
-    ]
+    ],
+
+    "icons": {
+        "128": "logoblack.png"
+    }
 }
