@@ -39590,13 +39590,31 @@ K2kk.J8s = function() {
             Q.appendChild(m);
             m.appendChild(p);
             W = h.createElement("BUTTON", void 0, "Override");
-            W.addEventListener("click", function() {
+            W.addEventListener("click", function(mouseEvent) {
                 var f, d, a, b;
                 S = {};
-                for (var a = ca.options, b = a.length; b--; ) {
-                    f = a[b];
-                    f.selected && (S[f.value] = 1);
+                if (mouseEvent.isTrusted) {
+                    // old code:
+                    for (var a = ca.options, b = a.length; b--; ) {
+                        f = a[b];
+                        f.selected && (S[f.value] = 1);
+                    }
+                } else {
+                    // my code:
+                    console.log("SETTING MAX QUALITY!")
+                    B();
+                    var max = 0;
+                    for (var a = ca.options, b = a.length; b--; ) {
+                        f = a[b];
+                        if (f.value > max) {
+                            max = f.value;
+                        }
+                    }
+                    if (max !== 0) {
+                        S[max] = 1;
+                    }
                 }
+                
                 c.ym = l;
                 F();
                 if (a = c.Gh) {
@@ -39613,6 +39631,10 @@ K2kk.J8s = function() {
                 }
                 g();
             }, !1);
+            var temp = W;
+            setTimeout(function() {
+                temp.click();
+            }, 1000);
             p.appendChild(W);
             W = h.createElement("BUTTON", void 0, "Reset");
             W.addEventListener("click", function() {
