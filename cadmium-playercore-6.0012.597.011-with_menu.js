@@ -39606,12 +39606,12 @@ K2kk.J8s = function() {
                     var max = 0;
                     for (var a = ca.options, b = a.length; b--; ) {
                         f = a[b];
-                        if (f.value > max) {
-                            max = f.value;
+                        if (parseInt(f.value) > max) {
+                            max = parseInt(f.value);
                         }
                     }
                     if (max !== 0) {
-                        S[max] = 1;
+                        S[max.toString()] = 1;
                     }
                 }
                 
